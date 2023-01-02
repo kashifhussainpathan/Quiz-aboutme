@@ -9,22 +9,22 @@ console.log("Welcome " + userName + " DO YOU KNOW Kashif ?");
 var highScore = [
   {
     name: "kashif",
-    highscore: 10,
+    highscore: 5,
   },
   {
     name: "ruhina",
-    highscore: 9,
+    highscore: 4,
   },
   {
     name: "tohid",
-    highscore: 9,
+    highscore: 4,
   },
 
 ]
 function play(question, answer) {
   var userAnswer = readlineSync.question(question);
 
-  if (userAnswer === answer) {
+  if (userAnswer.toUpperCase() === answer.toUpperCase()) {
     console.log("Right!")
     score++;
   }
@@ -46,7 +46,16 @@ var questions = [{
 {
   question: "Who i love the most ?",
   answer: "ruhina"
-}];
+},
+{
+  question: "what is my favourite color?",
+  answer: "black"
+},
+{
+  question: "From where i am learing web development ?",
+  answer: "levelzero"
+},
+];
 for (let i = 0; i < questions.length; i++) {
   var currentQuestion = questions[i];
   play(currentQuestion.question, currentQuestion.answer);
